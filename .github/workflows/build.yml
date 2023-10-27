@@ -26,19 +26,12 @@ jobs:
 
       - name: Build Angular app
         run: npm run build
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v0
-        with:
-          site-directory: dist/todo 
-
+          
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v0
         with:
-          artifact-name: pages
+          path: dist/todo
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
-        with:
-          artifact-name: pages          
-          folder: dist/todo 
+                     
